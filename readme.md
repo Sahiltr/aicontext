@@ -70,13 +70,30 @@ Install dependencies:
 ```
 pip install -r requirements.txt
 
+Install aicontext as a CLI:
+```bash
+pip install -e .
+
+```
+
 ## Usage
 
-Run from the root of any project:
+Run from any project directory:
 
 ```bash
-python -m aicontext scan . --out project_context.json
+aicontext scan . --out project_context.json
+
 ```
+Or scan any project from anywhere:
+```
+aicontext scan C:\Projects\Shopee --out shopee.json
+```
+
+This generates:
+```bash
+project_context.json
+```
+Upload or paste this file into ChatGPT, Claude, Cursor, or any AI assistant.
 
 You will see:
 File & folder counts
@@ -158,6 +175,7 @@ Project Tree:
 | Go                      | 🔜                       |
 | Rust                    | 🔜                       |
 ```
+The system is plugin-based — new languages can be added without changing the CLI.
 
 ## 🧱 Architecture
 ```bash
