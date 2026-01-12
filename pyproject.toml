@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aicontext"
+version = "0.1.0"
+description = "AI-grade multi-language codebase context generator"
+authors = [{ name="Sahil Thakur" }]
+requires-python = ">=3.10"
+dependencies = [
+  "click",
+  "pydantic",
+  "javalang",
+  "pyyaml"
+]
+
+[project.scripts]
+aicontext = "aicontext.__main__:cli"

@@ -33,6 +33,7 @@
     "aicontext/renderers/tree.py",
     "aicontext/scanner/__init__.py",
     "aicontext/scanner/fs.py",
+    "architecture.txt",
     "project_context.json",
     "readme.md",
     "requirements.txt"
@@ -73,6 +74,7 @@
     "\u2502   \u2514\u2500\u2500 scanner",
     "\u2502       \u251c\u2500\u2500 __init__.py",
     "\u2502       \u2514\u2500\u2500 fs.py",
+    "\u251c\u2500\u2500 architecture.txt",
     "\u251c\u2500\u2500 project_context.json",
     "\u251c\u2500\u2500 readme.md",
     "\u2514\u2500\u2500 requirements.txt"
