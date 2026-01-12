@@ -49,12 +49,3 @@ Clone the repository:
 ```bash
 git clone https://github.com/yourname/aicontext
 cd aicontext
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv venv
-venv\Scripts\activate     # Windows
-# source venv/bin/activate  # macOS/Linux
-
