@@ -49,3 +49,166 @@ Clone the repository:
 ```bash
 git clone https://github.com/yourname/aicontext
 cd aicontext
+```
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourname/aicontext
+cd aicontext
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+venv\Scripts\activate     # Windows
+# source venv/bin/activate  # macOS/Linux
+
+Install dependencies:
+
+```
+pip install -r requirements.txt
+
+Install aicontext as a CLI:
+```bash
+pip install -e .
+
+```
+
+## Usage
+
+Run from any project directory:
+
+```bash
+aicontext scan . --out project_context.json
+
+```
+Or scan any project from anywhere:
+```
+aicontext scan C:\Projects\Shopee --out shopee.json
+```
+
+This generates:
+```bash
+project_context.json
+```
+Upload or paste this file into ChatGPT, Claude, Cursor, or any AI assistant.
+
+You will see:
+File & folder counts
+
+Language modules detected
+
+Entry points
+
+Frameworks
+
+API routes
+
+Project tree
+
+And it will generate:
+
+```bash
+project_context.json
+```
+This file is what you upload or paste into ChatGPT, Claude, Cursor, etc.
+
+## 📂 Example Output
+Found 142 files and 23 folders
+Detected 18 python modules
+Detected 6 javascript modules
+Detected 1 entry point
+Detected frameworks: fastapi, react
+Detected 12 API routes
+
+```bash
+Found 25 files and 9 folders
+Detected 1 entry points
+
+Project Tree:
+├── aicontext
+│   ├── __init__.py
+│   ├── __main__.py
+│   ├── analysis
+│   │   ├── dependencies.py
+│   │   └── entrypoints.py
+│   ├── cli.py
+│   ├── exporters
+│   │   └── json_exporter.py
+│   ├── extractors
+│   │   ├── java
+│   │   │   ├── __init__.py
+│   │   │   ├── core.py
+│   │   │   └── spring.py
+│   │   ├── javascript
+│   │   │   ├── __init__.py
+│   │   │   ├── core.py
+│   │   │   └── react.py
+│   │   ├── python
+│   │   │   ├── __init__.py
+│   │   │   ├── core.py
+│   │   │   ├── frameworks.py
+│   │   │   └── routes.py
+│   │   └── registry.py
+│   ├── renderers
+│   │   ├── __init__.py
+│   │   └── tree.py
+│   └── scanner
+│       ├── __init__.py
+│       └── fs.py
+├── architecture.txt
+├── project_context.json
+├── readme.md
+└── requirements.txt
+```
+
+## Supported Language:
+```bash
+| Language                | Status                   |
+| ----------------------- | ------------------------ |
+| Python                  | ✅                        |
+| Java (Spring Boot)      | ✅                        |
+| JavaScript / TypeScript | ✅                        |
+| C / C++                 | 🔜 (Tree-sitter planned) |
+| Go                      | 🔜                       |
+| Rust                    | 🔜                       |
+```
+The system is plugin-based — new languages can be added without changing the CLI.
+
+## 🧱 Architecture
+```bash
+FILESYSTEM
+   ↓
+Scanner (fs.py)
+   ↓
+Language Plugins (Python / Java / JS)
+   ↓
+Dependency & Entry Analysis
+   ↓
+Tree Renderer
+   ↓
+AI-Ready JSON Export
+```
+This is the same architecture used by professional static-analysis and AI tooling platforms.
+
+## 🤝 Contributing
+New languages, frameworks, and analyzers are welcome.
+
+To add a language:
+
+Create extractors/<language>/core.py
+
+Register it in extractors/<language>/__init__.py
+
+Done — no CLI changes required
+
+
+## 📜 License
+
+MIT — free forever.
+
+
+
+
